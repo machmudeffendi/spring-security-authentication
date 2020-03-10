@@ -4,14 +4,16 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.util.Date;
 
 @Data
 @Builder
-@AllArgsConstructor
-@NoArgsConstructor
+//@AllArgsConstructor
+//@NoArgsConstructor
 @Entity
 @Table(name = "user")
 public class UserModel {
@@ -23,8 +25,10 @@ public class UserModel {
     private String password;
     private String role;
     @Column(name = "created_at")
+    @CreationTimestamp
     private Date createdAt;
     @Column(name = "updated_at")
+    @UpdateTimestamp
     private Date updatedAt;
 
     public UserModel() {
