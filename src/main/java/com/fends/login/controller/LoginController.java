@@ -41,7 +41,7 @@ public class LoginController {
         }
         if (bindingResult.hasErrors()){
             model.addAttribute("status","failed");
-            model.addAttribute("message", bindingResult.getAllErrors());
+            model.addAttribute("message", bindingResult.getFieldError().getDefaultMessage());
         }else{
             userService.saveUserAdmin(userModel);
             model.addAttribute("status","success");
