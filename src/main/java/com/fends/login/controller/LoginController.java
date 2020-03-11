@@ -20,7 +20,7 @@ public class LoginController {
     @Autowired
     private UserService userService;
 
-    @GetMapping("/login")
+    @GetMapping({"/","/login"})
     public String loginPage(Model model){
         return "auth/login";
     }
